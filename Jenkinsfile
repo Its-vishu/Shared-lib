@@ -1,4 +1,4 @@
-@Library('Kirti-shared@master')_
+@Library('Shared-lib@main')_
 pipeline {
 agent any
 stages{
@@ -6,7 +6,7 @@ stage('Demo') {
 steps
 {
 echo 'Hello world'
-sayHello 'Kirti'
+sayHello 'Vishwajeet '
 }
 }
 stage("build")
@@ -25,8 +25,8 @@ println "$line"}
 }
 post {
 always {
-// emailext body: '${env.BUILD_URL} has result ${currentBuild.result}', subject: 'test email', to: 'kirti1234p@gmail.com'
-mail to: 'kirti1234p@gmail.com',
+// emailext body: '${env.BUILD_URL} has result ${currentBuild.result}', subject: 'test email', to: 'vishwajeet751srs@gmail.com'
+mail to: 'Vishwajeet751srs@gmail.com',
 subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
 body: "${env.BUILD_URL} has result ${currentBuild.result}"
 }
